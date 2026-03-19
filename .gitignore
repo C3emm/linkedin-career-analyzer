@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .env
+.env.save
+.env.local
+.env.*.local
 reports/
 *.log
 .DS_Store
@@ -8,3 +11,6 @@ reports/
 *.swo
 .vscode/
 .idea/
+.claude/
+güncel1-.txt
+README_DETAYLI.md
