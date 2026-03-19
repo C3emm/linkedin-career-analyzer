@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LinkedIn Career Analysis Result",
+  "type": "object",
+  "properties": {
+    "analysisId": {
+      "type": "string",
+      "description": "Unique analysis identifier"
+    },
+    "company": {
+      "type": "string",
+      "description": "Target company name"
+    },
+    "role": {
+      "type": "string",
+      "description": "Target role/position"
+    },
+    "department": {
+      "type": "string",
+      "description": "Department filter (optional)"
+    },
+    "profileCount": {
+      "type": "integer",
+      "description": "Number of profiles analyzed"
+    },
+    "analyzedAt": {
+      "type": "string",
+      "format": "date",
+      "description": "Analysis date"
+    },
+    "topSkills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": { "type": "string" },
+          "frequency": { "type": "integer" },
+          "percentage": { "type": "number" }
+        },
+        "required": ["skill", "frequency", "percentage"]
+      }
+    },
+    "educationStats": {
+      "type": "object",
+      "properties": {
+        "bachelorsMajors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "major": { "type": "string" },
+              "percentage": { "type": "number" }
+            }
+          }
+        },
+        "mastersPercentage": { "type": "number" },
+        "phdPercentage": { "type": "number" }
+      }
+    },
+    "commonCertifications": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "techStack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "technology": { "type": "string" },
+          "category": { "type": "string" },
+          "frequency": { "type": "integer" }
+        }
+      }
+    },
+    "extras": {
+      "type": "object",
+      "properties": {
+        "opensourcePercentage": { "type": "number" },
+        "publicationsPercentage": { "type": "number" },
+        "personalProjectsPercentage": { "type": "number" }
+      }
+    }
+  },
+  "required": [
+    "analysisId",
+    "company",
+    "role",
+    "profileCount",
+    "analyzedAt",
+    "topSkills",
+    "educationStats",
+    "commonCertifications",
+    "techStack"
+  ]
+}

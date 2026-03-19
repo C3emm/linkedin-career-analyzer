@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Career Intelligence Analyzer</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🔍 LinkedIn Career Analyzer</h1>
+      <p>Hedef pozisyonunuz için gereken yetkinlikleri keşfedin</p>
+    </header>
+
+    <!-- Ana Form -->
+    <div class="form-container">
+      <form id="analyzerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Şirket Adı <span class="required">*</span></label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="örn: Google, Trendyol, Microsoft"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="role">Pozisyon <span class="required">*</span></label>
+            <input
+              type="text"
+              id="role"
+              name="role"
+              placeholder="örn: Software Engineer, Data Scientist"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="department">Departman (Opsiyonel)</label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              placeholder="örn: Machine Learning, Platform"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="count">Profil Sayısı</label>
+            <input
+              type="number"
+              id="count"
+              name="count"
+              min="5"
+              max="50"
+              value="15"
+            >
+            <small>5-50 arası profil analiz edilir</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="certs" name="certs">
+              Sertifika analizi dahil et
+            </label>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="extras" name="extras">
+              Yan projeler ve açık kaynak katkıları
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="analyzeBtn">
+            <span class="btn-text">Analizi Başlat</span>
+            <span class="btn-loader" style="display: none;">⏳ Analiz ediliyor...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Yükleme Durumu -->
+    <div id="loadingStatus" class="loading-status" style="display: none;">
+      <div class="loading-spinner"></div>
+      <h3>Analiz Yapılıyor...</h3>
+      <p id="loadingMessage">LinkedIn profilleri aranıyor...</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Hata Mesajı -->
+    <div id="errorMessage" class="error-message" style="display: none;">
+      <h3>❌ Hata Oluştu</h3>
+      <p id="errorText"></p>
+      <button onclick="hideError()" class="btn btn-secondary">Tamam</button>
+    </div>
+
+    <!-- Sonuç Alanı -->
+    <div id="resultContainer" class="result-container" style="display: none;">
+      <div class="result-header">
+        <h2>📊 Analiz Sonuçları</h2>
+        <button onclick="downloadReport()" class="btn btn-secondary">📥 Raporu İndir</button>
+      </div>
+      <div id="resultContent"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🤖 Powered by Claude AI & Playwright MCP</p>
+    <p><small>Bu araç araştırma amaçlıdır. LinkedIn'in kullanım şartlarına uygun kullanın.</small></p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

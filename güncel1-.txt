@@ -1,0 +1,48 @@
+Last login: Thu Mar 19 15:41:19 on ttys004
+➜  ~ git:(main) ✗ cd /Users/cemdeniz/Documents/ai_agent_test1
+➜  ai_agent_test1 git:(main) ✗ npx playwright install chromium
+
+➜  ai_agent_test1 git:(main) ✗ nano .env
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09                           File: .env                             
+
+# Anthropic API Key (Zorunlu)
+ANTHROPIC_API_KEY=sk-sk-ant-api03-_GHJnuLnrP79nIT-klqjU-Tma6CywAcvKgwKei0O8ynEE$
+
+# LinkedIn Cookie (Opsiyonel - otomatik giriş için)
+LINKEDIN_COOKIE=...
+
+# Output dizini (Default: ./reports)
+OUTPUT_DIR=./reports
+
+# Günlük profil limiti
+MAX_PROFILES_PER_DAY=50
+
+# Profiller arası bekleme süresi (ms)
+DELAY_MIN_MS=3000
+DELAY_MAX_MS=7000
+
+# Gerçek LinkedIn Scraping (true: gerçek, false: mock data)
+USE_REAL_SCRAPING=true
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
